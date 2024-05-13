@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Agendamento</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_agendamento.css">
+    <title>Formulário de Inscrição</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<form action="#" th:action="@{/agendar}" method="post" th:object="${agendamento}" id="agendamentoForm">
+    <div class="titulo">
+        <a href="https://www.instagram.com/_bramur/" target="_blank"><img src="./images/bramur2.png" alt=""></a>
+        <a href="agendados"><button type="button">Ver agendados</button></a>
+        <h2>Agende sua aula experimental</h2>
+    </div>
+    <label for="nome">Nome:
+        <input type="text" th:field="*{nome}" id="nome" name="nome" required>
+    </label>
+
+    <label for="idade">Idade:
+        <input type="number" th:field="*{idade}" id="idade" name="idade" required min="6" class="styled-input">
+    </label>
+
+    <label for="telefone">Telefone:
+        <input type="tel" id="telefone" th:field="*{telefone}" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+    </label>
+
+    <label for="modalidade">Modalidade:
+        <select id="modalidade" name="modalidade" th:field="*{modalidade}" placeholder="(xx) xxxxx-xxxx">
+            <option value="" disabled selected>Selecione uma modalidade</option>
+            <option value="muay_thai">Muay Thai</option>
+            <option value="boxe">Boxe</option>
+        </select>
+    </label>
+
+    <label for="calendar">
+        Data:
+        <input type="datetime-local" th:field="*{diaEHora}" id="calendar" required/>
+    </label>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        $('#agendamentoForm').submit(function (event) {
+            var selectedModalidade = $('#modalidade').val();
+            var selectedDateTime = new Date($('#calendar').val());
+
+            if (selectedModalidade === 'boxe') {
+                // Permitir apenas segundas, quartas e sextas-feiras às 19:00
+                if (!(selectedDateTime.getDay() === 1 || selectedDateTime.getDay() === 3 || selectedDateTime.getDay() === 5)
+                    || !(selectedDateTime.getHours() === 19 && selectedDateTime.getMinutes() === 0)) {
+                    alert("Para a modalidade Boxe, só é possível agendar às segundas, quartas e sextas às 19:00.");
+                    event.preventDefault();
+                }
+            } else if (selectedModalidade === 'muay_thai') {
+                // Permitir apenas terças e quintas-feiras às 19:30
+                if (!(selectedDateTime.getDay() === 2 || selectedDateTime.getDay() === 4)
+                    || !(selectedDateTime.getHours() === 19 && selectedDateTime.getMinutes() === 30)) {
+                    alert("Para a modalidade Muay Thai, só é possível agendar às terças e quintas às 19:30.");
+                    event.preventDefault();
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

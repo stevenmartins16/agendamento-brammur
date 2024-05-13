@@ -1,0 +1,204 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.titulo {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    text-align: center; /* Adicionado para centralizar o texto */
+}
+
+/* Remova as propriedades desnecessárias da tag img */
+.imagem-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+
+}
+
+img {
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(149deg, rgb(0 0 0) 33%, #1DE358 100%);
+    min-height: 100vh;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: 30px;
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 100%;
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+select,
+input[type="date"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.calendar-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#calendar th,
+#calendar td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#calendar th {
+    background-color: #f2f2f2;
+}
+
+.selectable {
+    background-color: #76e67a;
+}
+
+.selected {
+    background-color: #357538;
+    color: white;
+}
+
+.tabela {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.styled-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela th, .tabela td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabela th {
+    background-color: #f2f2f2;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    justify-content: center;
+    margin: 0 auto;
+}
+

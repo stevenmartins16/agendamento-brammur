@@ -1,0 +1,103 @@
+/* styles.css */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 16px;
+}
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: 30px;
+}
+header{
+    text-align: center;
+    padding: 10px;
+
+}
+header img{
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+}
+h1 {
+    padding: 40px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    margin: 0px;
+    text-align: start;
+    color: #333333;
+}
+img{
+    max-width: 250px;
+    text-align: center;
+    align-items: start;
+
+}
+table{
+    border-collapse: collapse;
+
+
+}
+table, th, td{
+    border: 3px solid #333333;
+    text-align: center;
+}
+th, td{
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(149deg, rgb(0 0 0) 33%, #1DE358 100%);
+    min-height: 100vh;
+    margin: 0;
+}
+table tr:nth-child(even) {
+    background-color: #f9f9f9;}
+
+
+td{
+    color: #333333;
+    font-weight: bold;
+    padding: 0;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    padding: 0;
+    text-align: center;
+}
+
+tr {
+    background-color: #f2f2f2;
+}
+button{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

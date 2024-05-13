@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Registrado com sucesso</title>
+  <style type="text/css">
+    /* Estilos globais */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: linear-gradient(149deg, rgb(0 0 0) 33%, #1DE358 100%);
+      color: #333;
+      min-height: 100vh;
+    }
+    .titulo {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+
+    img {
+      max-width: 250px;
+    }
+    div {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    h2 {
+      text-align: center;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    span {
+      display: block;
+      margin: 5px 0;
+      font-weight: bold;
+    }
+
+    span:nth-of-type(2n) {
+      font-weight: normal;
+    }
+
+    /* Estilos responsivos para celulares */
+    @media (max-width: 768px) {
+      div {
+        padding: 15px;
+        max-width: 90%;
+        font-size: 22px;
+      }
+      span {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div>
+  <div class="titulo">
+    <a href="https://www.instagram.com/_bramur/" target="_blank"><img src="./images/bramur2.png" alt=""></a>
+    <h2 th:text="'Registrado com sucesso! ordem #' + ${agendamento.id}"></h2>
+  </div>
+  <span>Nome:</span><span th:text="${agendamento.nome}"></span>
+  <span>Idade:</span><span th:text="${agendamento.idade} +' anos'"></span>
+  <span>Telefone:</span><span th:text="${agendamento.telefone}"></span>
+  <span>Data:</span><span th:text="${agendamento.diaEHora}"></span>
+  <span>Modalidade:</span><span th:text="${agendamento.modalidade}"></span>
+  <a href="/index"><button type="button"> Fazer um novo agendamento</button></a>
+  <a href="agendados"><button type="button">Ver agendados</button></a>
+</div>
+</body>
+</html>
